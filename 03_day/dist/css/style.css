@@ -1,0 +1,315 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap");
+
+:root {
+  --primary-glow: #6366f1;
+  --secondary-glow: #ff00e5;
+  --bg-dark: #020205;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --error-color: #ff3366;
+  --error-bg: rgba(255, 51, 102, 0.1);
+  --font-display: "Syne", sans-serif;
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background-color: var(--bg-dark);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-main);
+  color: white;
+  /* תיקון הגלילה: */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4rem 0;
+}
+
+/* =========================================
+   2. BACKGROUND EFFECTS
+   ========================================= */
+.nebula {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 0, 229, 0.1) 0%,
+      transparent 40%
+    );
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* =========================================
+   3. LAYOUT & CONTAINER
+   ========================================= */
+.registration-container {
+  width: 90vw;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start; /* יישור למעלה כדי שהטופס לא יצוף בשינויי גובה */
+  animation: fadeIn 1.2s var(--ease);
+}
+
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.85;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fff 40%, rgba(255, 255, 255, 0.15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: sticky; /* הכותרת תישאר בצד בזמן גלילה ראשונית */
+  top: 4rem;
+}
+
+/* =========================================
+   4. FORM ELEMENTS
+   ========================================= */
+.form-box {
+  background: var(--glass);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--glass-border);
+  padding: 3rem;
+  border-radius: 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.input-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 1.2rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.4s var(--ease);
+}
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--primary-glow);
+  padding-left: 0.8rem;
+}
+
+input::placeholder {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+button {
+  width: 100%;
+  padding: 1.4rem;
+  margin-top: 1.5rem;
+  border-radius: 100px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+  background: var(--primary-glow);
+  color: white;
+}
+
+/* =========================================
+   5. ERROR STATES
+   ========================================= */
+.input-group.has-error input {
+  border-bottom-color: var(--error-color);
+  background: var(--error-bg);
+  animation: shake 0.4s var(--ease) both;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  display: block;
+  opacity: 0;
+  transition: 0.3s var(--ease);
+}
+
+.input-group.has-error .error-message {
+  opacity: 1;
+}
+
+/* =========================================
+   6. USERS SECTION (TABLE)
+   ========================================= */
+.users-section {
+  grid-column: 1 / -1; /* פריסה על כל הרוחב מתחת לטופס */
+  margin-top: 6rem;
+  animation: fadeIn 1.5s var(--ease);
+}
+
+.users-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--glass);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.users-table th,
+.users-table td {
+  padding: 1.4rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.users-table th {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--primary-glow);
+  letter-spacing: 2px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-glow),
+    var(--secondary-glow)
+  );
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.access-badge {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-glow);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* =========================================
+   7. ANIMATIONS & MEDIA QUERIES
+   ========================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 900px) {
+  .registration-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-text h1 {
+    position: static;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .form-box {
+    padding: 2rem;
+  }
+}
+
+/* תא הפעולות */
+.action-cell {
+  text-align: right !important; /* יישור לימין למראה נקי */
+  padding-right: 2rem !important;
+}
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease);
+  padding: 0;
+  margin: 0;
+}
+
+.btn-delete:hover {
+  background: var(--error-bg);
+  color: var(--error-color);
+  border-color: var(--error-color);
+  transform: rotate(90deg) scale(1.1); /* אפקט סיבוב קטן ב-hover */
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.2);
+}
+
+/* התאמה לטבלה כדי שהכותרת של המחיקה לא תפריע */
+.users-table th:last-child {
+  text-align: right;
+  padding-right: 2.5rem;
+}
