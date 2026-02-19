@@ -1,28 +1,34 @@
-📅 יום 1 — אנשי קשר (הבסיס)
+# Project Title
 
-מטרה: לראות איך אתה חושב בסיסי
+## Introduction
 
-דרישות:
+Provide a brief introduction to the project here.
 
-רשימת אנשי קשר
+## Installation
 
-כל איש קשר:
-שם
-טלפון
+### Prerequisites
+- List of prerequisites.
 
-אפשר:
-להוסיף
-למחוק
-להציג רשימה
+### Steps
+1. Step one.
+2. Step two.
 
-הגבלות:
-JS +בלב
-בלי UI מפואר (גם console זה בסדר)
-בלי ספריות חיצוניות
+## Usage
 
-מה אני בודק
-סדר
-שמות
-זרימת קוד
-פשטות
+How to use the project.
 
+## Contributing
+
+Guidelines on how to contribute to this project.
+
+## License
+
+Details about the license.
+
+## Contact
+
+Information on how to reach you.
+
+---
+
+**Last updated:** 2026-02-19 09:22:47 (UTC)
