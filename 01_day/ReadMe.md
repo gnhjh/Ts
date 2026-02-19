@@ -1,40 +1,39 @@
-////////////////////////////////////////////////////////////
-///////////////////////// DAY 01 ////////////////////////
-////////////////////// CONTACT MANAGER ///////////////////
-////////////////////////////////////////////////////////////
+📅 יום 1 — אנשי קשר (הבסיס)
 
-OBJECTIVE
-Design and implement a minimal contact management system.
-Focus on clarity, structure, and clean logic.
+מטרה: לראות איך אתה חושב בסיסי
 
-REQUIREMENTS
+דרישות:
 
-Contact Model
+רשימת אנשי קשר
 
-- name: string
-- phone: string
+כל איש קשר:
 
-FUNCTIONALITY
+שם
 
-- addContact(...)
-- deleteContact(...)
-- getAllContacts()
+טלפון
 
-CONSTRAINTS
+אפשר:
 
-- TypeScript / JavaScript only
-- No external libraries
-- No UI frameworks
-- Console-based implementation is acceptable
+להוסיף
 
-EVALUATION CRITERIA
+למחוק
 
-- Clean architecture
-- Clear naming
-- Logical flow
-- Separation of concerns
-- Simplicity over cleverness
+להציג רשימה
 
-GOAL
-Build the simplest possible solution,
-structured as if it were production-ready.
+הגבלות:
+
+JS + TS בלבד
+
+בלי UI מפואר (גם console זה בסדר)
+
+בלי ספריות חיצוניות
+
+מה אני בודק:
+
+סדר
+
+שמות
+
+זרימת קוד
+
+פשטות
