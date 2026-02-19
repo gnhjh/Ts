@@ -1,0 +1,106 @@
+section.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Form & Search Layouts */
+.form-grid,
+.search-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-section {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a5a6;
+  pointer-events: none;
+}
+
+/* Input Styling */
+.search-input,
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  padding-left: 40px; /* Space for icon */
+  border: 2px solid #e0e6ed;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.form-input {
+  padding-left: 15px;
+}
+
+.search-input:focus,
+.form-input:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+/* Buttons */
+.add-btn,
+button.secondary {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+button.secondary {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+}
+
+.search-result {
+  background-color: #fcfcfc; /* צבע מעט שונה לרקע תוצאות החיפוש */
+  border-style: dashed; /* מסגרת מקווקוות נותנת תחושה של "תוצאה זמנית" */
+  opacity: 0.9;
+}
+
+.search-results-container {
+  /* מניעת הידבקות לתחתית הכרטיס */
+  padding-bottom: 5px;
+}

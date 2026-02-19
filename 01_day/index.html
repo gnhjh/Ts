@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <link rel="stylesheet" href="dist/css/cards.css" />
+    <link rel="stylesheet" href="dist/css/Avatar.css" />
+    <!-- title -->
+    <title>Test Mode</title>
+  </head>
+  <body>
+    <div class="grid">
+      <header class="grid__header">
+        <h1>this is header</h1>
+      </header>
+      <main class="grid__main">
+        <section class="card search-section">
+          <div class="input-wrapper">
+            <span class="input-icon">🔍</span>
+            <input
+              id="search"
+              type="text"
+              placeholder=" חפש איש קשר לפי שם או משפחה..."
+              class="search-input"
+            />
+          </div>
+
+          <div class="search-meta">
+            <span>תוצאות חיפוש (2)</span>
+            <button id="clearSearch" class="clear-link">נקה חיפוש</button>
+          </div>
+
+          <div
+            id="search-results"
+            class="search-results-container"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-top: 10px;
+            "
+          >
+            <div class="contact-item search-result">
+              <div class="contact-avatar" style="background: #2ecc71">יש</div>
+              <div class="contact-details">
+                <strong>ישראל ישראלי</strong>
+                <span>050-1234567</span>
+              </div>
+            </div>
+
+            <div class="contact-item search-result">
+              <div class="contact-avatar" style="background: #2ecc71">של</div>
+              <div class="contact-details">
+                <strong>שרה לוי</strong>
+                <span>052-7654321</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card add-section">
+          <h2>Add New Contact</h2>
+          <div class="form-grid">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Fname"
+                id="Fname"
+                class="form-input"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                id="Lname"
+                type="text"
+                placeholder="Lname"
+                class="form-input"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                id="phone"
+                type="text"
+                placeholder="Phone"
+                class="form-input"
+              />
+            </div>
+            <button id="addContact" class="add-btn">Add Contact</button>
+          </div>
+        </section>
+
+        <section class="card list-section">
+          <div class="list-header">
+            <h2>All Contacts</h2>
+            <button id="btnShowAll" class="secondary">Show All</button>
+          </div>
+
+          <div id="contact-list">
+            <div class="contact-item">
+              <div class="contact-avatar">יש</div>
+              <div class="contact-details">
+                <strong>ישראל ישראלי</strong>
+                <span>050-1234567</span>
+              </div>
+              <div class="contact-actions">
+                <button class="btn-icon">📞</button>
+                <button class="btn-icon delete">🗑️</button>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-avatar">יש</div>
+              <div class="contact-details">
+                <strong>ישראל ישראלי</strong>
+                <span>050-1234567</span>
+              </div>
+              <div class="contact-actions">
+                <button class="btn-icon">📞</button>
+                <button class="btn-icon delete">🗑️</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="grid__footer">
+        <div class="footer-content">
+          <p>© 2026 My Contact App</p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Help</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JS -->
+    <script src="dist/js/app.js" type="module"></script>
+    <!-- End -->
+  </body>
+</html>

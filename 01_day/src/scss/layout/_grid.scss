@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3fr);
+  gap: 1rem;
+
+  &__header {
+    background-color: aqua;
+    text-align: center;
+  }
+
+  &__main {
+    background-color: azure;
+  }
+
+  &__footer {
+    background-color: aqua;
+    text-align: center;
+  }
+}
