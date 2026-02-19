@@ -1,6 +1,3 @@
-יום ואז tsc --init להוריד את typeScript,--.
-הקבצים : rootDit:"./src" + outDir:'./dist'.--,
-ואז tsc --watch.
 
 👋 מסגרת אימון 30 יום – כללי המשחק
 
