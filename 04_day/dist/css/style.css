@@ -1,0 +1,418 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap");
+
+:root {
+  --primary-glow: #6366f1;
+  --secondary-glow: #ff00e5;
+  --bg-dark: #020205;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --error-color: #ff3366;
+  --error-bg: rgba(255, 51, 102, 0.1);
+  --font-display: "Syne", sans-serif;
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-main);
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4rem 0;
+}
+
+/* =========================================
+   2. BACKGROUND EFFECTS
+   ========================================= */
+.nebula {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 0, 229, 0.1) 0%,
+      transparent 40%
+    );
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* =========================================
+   3. LAYOUT & HERO
+   ========================================= */
+.registration-container {
+  width: 90vw;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  animation: fadeIn 1.2s var(--ease);
+}
+
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.85;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fff 40%, rgba(255, 255, 255, 0.15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: sticky;
+  top: 4rem;
+}
+
+/* =========================================
+   4. FORM ELEMENTS
+   ========================================= */
+.form-box {
+  background: var(--glass);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--glass-border);
+  padding: 3rem;
+  border-radius: 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.input-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 1.2rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.4s var(--ease);
+}
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--primary-glow);
+  padding-left: 0.8rem;
+}
+
+input::placeholder {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  padding: 1.4rem;
+  margin-top: 1.5rem;
+  border-radius: 100px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+  background: var(--primary-glow);
+  color: white;
+}
+
+/* Error States */
+.input-group.has-error input {
+  border-bottom-color: var(--error-color);
+  background: var(--error-bg);
+  animation: shake 0.4s var(--ease) both;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  display: block;
+  opacity: 0;
+  transition: 0.3s var(--ease);
+}
+
+.input-group.has-error .error-message {
+  opacity: 1;
+}
+
+/* =========================================
+   5. USERS SECTION & CONTROLS
+   ========================================= */
+.users-section {
+  grid-column: 1 / -1;
+  margin-top: 6rem;
+  animation: fadeIn 1.5s var(--ease);
+  width: 100%;
+}
+
+.table-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.controls-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Search Box */
+.search-box input {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+  width: 250px;
+  color: white;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+/* Sort Buttons */
+.btn-control {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: #888;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-control:hover,
+.btn-control.active {
+  border-color: var(--primary-glow);
+  color: white;
+}
+
+/* =========================================
+   6. TABLE DESIGN
+   ========================================= */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--glass);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.users-table th,
+.users-table td {
+  padding: 1.4rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.users-table th {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--primary-glow);
+  letter-spacing: 2px;
+}
+
+/* Action Column Alignment */
+.action-cell {
+  text-align: right !important;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.users-table th:last-child {
+  text-align: right;
+  padding-right: 3rem;
+}
+
+/* User Row Components */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-glow),
+    var(--secondary-glow)
+  );
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.access-badge {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-glow);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* =========================================
+   7. ACTION BUTTONS (Edit/Delete)
+   ========================================= */
+.btn-action {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: rgba(255, 255, 255, 0.4);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--ease);
+  font-size: 0.9rem;
+}
+
+.btn-edit:hover {
+  border-color: var(--secondary-glow);
+  color: white;
+  background: rgba(255, 0, 229, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 229, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-delete:hover {
+  border-color: var(--error-color);
+  color: white;
+  background: rgba(255, 51, 102, 0.1);
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+  transform: translateY(-2px) rotate(90deg);
+}
+
+/* =========================================
+   8. ANIMATIONS & RESPONSIVE
+   ========================================= */
+.row-fade-out {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.5s var(--ease);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 900px) {
+  .registration-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-text h1 {
+    position: static;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .table-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box input {
+    width: 100%;
+  }
+}
+
+.action-cell {
+  text-align: right !important;
+  display: flex !important; /* מבטיח שה-flex יחול */
+  justify-content: flex-end; /* מצמיד לימין */
+  align-items: center; /* ממרכז אנכית */
+  gap: 12px; /* הריווח בין העריכה למחיקה */
+  padding-right: 2.5rem !important;
+}
+
+/* מוודא שה-SVG בתוך הכפתור לא "בורח" */
+.btn-action svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none; /* מונע בעיות ב-click */
+}
+
+.user-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5); /* לבן שקוף למראה מעודן */
+  font-weight: 300;
+}
+
+/* התאמה לרזולוציות נמוכות - הסתרת תאריך אם אין מקום */
+@media (max-width: 768px) {
+  .user-date {
+    display: none;
+  }
+}
