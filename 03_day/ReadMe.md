@@ -1,1 +1,10 @@
-🎯 משימה – User Manager עם מחיקה + בדיקת כפילויות + LocalStorage אתה מרחיב את מערכת ההרשמה שלך. דרישות חדשות 1️⃣ בדיקת משתמש קיים אסור להוסיף משתמש עם אותו email אם קיים → תוצג שגיאה מתאימה 👉 כאן אתה כבר מתחיל לחשוב על data integrity. 2️⃣ מחיקת משתמש לכל שורה בטבלה יהיה כפתור Delete בלחיצה: המשתמש יימחק מה־array השורה תימחק מה־DOM יתעדכן ב־localStorage 👉 כאן אתה מתחיל לעבוד עם Event Delegation. 3️⃣ שמירה ל־localStorage בעת הוספת משתמש → נשמר בעת טעינת הדף → נטען מ־localStorage בעת מחיקה → מתעדכן ⚠️ חשוב: תטפל במקרה שבו אין עדיין נתונים ב־localStorage. 4️⃣ רינדור נכון (בלי innerHTML +=) אני רוצה שתפסיק להשתמש ב־innerHTML +=. במקום זה: createElement appendChild או DocumentFragment למה? כי אתה צריך להתחיל לחשוב על: performance מניעת reflow מניעת מחיקת event listeners 🧠 דגשים חשובים אני רוצה לראות ממך: פונקציה נפרדת ל־renderAllUsers() פונקציה נפרדת ל־renderSingleUser() המתודה deleteUser בתוך ה־UserList class טעינה ראשונית ב־DOMContentLoaded 🔥 בונוס (אם נשאר זמן) Confirm לפני מחיקה או הוספת timestamp למשתמש
+🎯 משימה – User Manager 
+
+עם מחיקה + בדיקת כפילויות + LocalStorage אתה מרחיב את מערכת ההרשמה שלך.
+דרישות חדשות 1️⃣ 
+בדיקת משתמש קיים אסור להוסיף משתמש עם אותו email אם קיים → תוצג שגיאה מתאימה 👉 כאן אתה כבר מתחיל לחשוב
+עלdata integrity. 2️⃣ מחיקת משתמש לכל שורה בטבלה יהיה כפתור Delete בלחיצה: המשתמש יימחק מה־array השורה תימחק מה־DOM יתעדכן ב־localStorage 👉 כאן אתה מתחיל לעבוד 
+עם Event Delegation. 3️⃣ שמירה ל־localStorage בעת הוספת משתמש → נשמר בעת טעינת הדף → נטען מ־localStorage בעת מחיקה → מתעדכן ⚠️ חשוב: תטפל במקרה שבו אין עדיין נתונים 
+ב־localStorage. 4️⃣ רינדור נכון (בלי innerHTML +=) אני רוצה שתפסיק להשתמש ב־innerHTML +=. במקום זה: createElement appendChild או DocumentFragment למה? 
+כי אתה צריך להתחיל לחשוב על: performance מניעת reflow מניעת מחיקת event listeners 🧠 דגשים חשובים אני רוצה לראות ממך: פונקציה נפרדת ל־renderAllUsers() פונקציה נפרדת ל־renderSingleUser() המתודה deleteUser בתוך ה־UserList class טעינה ראשונית ב־DOMContentLoaded 🔥 בונוס (אם נשאר זמן) Confirm לפני מחיקה או הוספת timestamp למשתמש
+
